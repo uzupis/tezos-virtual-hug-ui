@@ -53,7 +53,7 @@ export default function Home() {
 	return (
 		<div className={`${styles.container}`}>
 			<Head>
-				<title>Tezos Virtual Hug</title>
+				<title>$HUX 4 ALL</title>
 				<meta name="description" content="Send virtual hugs on the Tezos blockchain" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
