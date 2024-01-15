@@ -74,14 +74,14 @@ export default function Home() {
 				<input
 					type="text"
 					id="default-input"
-					placeholder="Send a HUG to ..."
+					placeholder="tz..."
 					class="border border-white-300 text-black-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/6 p-2.5 mb-3 text-center placeholder-opacity-50"
 					value={toAddress}
 					onChange={(e) => { setToAddress(e.target.value) }}
 				/>
 				<button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-3/6  justify-center"
 					onClick={async () => { await onSendHugClick() }}><span class="flex justify-center text-center">
-						Send a Hug&nbsp;
+						Send a million $HUX&nbsp;
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
 						</svg>
