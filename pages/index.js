@@ -67,7 +67,7 @@ export default function Home() {
 
 				<p className={`${styles.description} mb-10 text-center justify-center`}>
 					<strong>Tezos Virtual Hug</strong> is a decentralized application that allows you to send virtual hugs on the Tezos blockchain. Just enter the wallet address of someone you want to send a hug to and Send a Hug. The <strong>HUG</strong> will be sent to You and the Tezos address you entered in form of a Non-Fungible Token.
-				<br>*The contract address is KT1MT3rZkTE8cN8eGQaNJ2Wg2D2nPPtdxELv. You can swap $XTZ for $HUX Z on quipuswap.
+				</p><br><p>*The contract address is KT1MT3rZkTE8cN8eGQaNJ2Wg2D2nPPtdxELv. You can swap $XTZ for $HUX Z on quipuswap.
 						</p>
 
 				<h3 className="mb-3">Transfer <span className="font-semibold">1,000,000 $HUX</span> to anyone so both of you get a <span className="font-semibold">$HUX NFT</span></h3>
