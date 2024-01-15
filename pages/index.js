@@ -31,7 +31,7 @@ export default function Home() {
 		await dappClient().connectAccount();
 		const accounts = await dappClient().getAccount();
 		setAccount(accounts.account?.address);
-		setTransactionMsg(`Wallet Connected. Sending a Hug to ${toAddress}`)
+		setTransactionMsg(`Wallet Connected. Sending a million $HUX to ${toAddress}`)
 		const send_hug = await sendHug(toAddress)
 		setIsTxn(false)
 		if (send_hug) {
@@ -54,13 +54,13 @@ export default function Home() {
 		<div className={`${styles.container}`}>
 			<Head>
 				<title>$HUX 4 ALL</title>
-				<meta name="description" content="Send virtual hugs on the Tezos blockchain" />
+				<meta name="description" content="Send a million $HUX to your Tezos friends" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<main className={`${styles.main} text-black font-mono`}>
 				<h1 className={`${styles.title}`}>
-					Tezos Virtual Hug
+					$HUX 4 ALL
 				</h1>
 
 				<Image className="mb-4 mt-6" src="/hug.jpeg" alt="Hugs" width={250} height={150} />
@@ -69,7 +69,7 @@ export default function Home() {
 					<strong>Tezos Virtual Hug</strong> is a decentralized application that allows you to send virtual hugs on the Tezos blockchain. Just enter the wallet address of someone you want to send a hug to and Send a Hug. The <strong>HUG</strong> will be sent to You and the Tezos address you entered in form of a Non-Fungible Token.
 				</p>
 
-				<h3 className="mb-3">Transfer <span className="font-semibold">1,000,000 $HUX</span> to anyone so both of you get a <span className="font-semibold">$HUG NFT</span></h3>
+				<h3 className="mb-3">Transfer <span className="font-semibold">1,000,000 $HUX</span> to anyone so both of you get a <span className="font-semibold">$HUX NFT</span></h3>
 
 				<input
 					type="text"
