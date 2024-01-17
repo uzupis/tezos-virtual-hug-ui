@@ -14,6 +14,7 @@ export default function Home() {
 	const [isError, setIsError] = useState(false);
 	const [transactionMsg, setTransactionMsg] = useState('')
 	const [isTxn, setIsTxn] = useState(false)
+	const [errorMsg, setErrorMsg] = useState(false)
 
 	useEffect(() => {
 		(async () => {
@@ -24,43 +25,45 @@ export default function Home() {
 	}, []);
 
 	const onSendHugClick = async () => {
-		setIsError(false)
-		setIsSuccess(false)
-		setIsTxn(true)
-		setTransactionMsg("Connecting to Wallet")
-		await dappClient().connectAccount();
-		const accounts = await dappClient().getAccount();
-		setAccount(accounts.account?.address);
-		setTransactionMsg(`Wallet Connected. Sending a million $HUX to ${toAddress}`)
-		const send_hug = await sendHug(toAddress)
-		setIsTxn(false)
-		if (send_hug) {
-			setIsSuccess(true)
+		try {
+			setIsError(false)
+			setIsSuccess(false)
+			setIsTxn(true)
+			setTransactionMsg("Connecting to Wallet")
+			await dappClient().connectAccount();
+			const accounts = await dappClient().getAccount();
+			setAccount(accounts.account?.address);
+			setTransactionMsg(`Wallet Connected. Sending a Hug to ${toAddress}`)
+			const send_hug = await sendHug(toAddress)
 			setIsTxn(false)
-			setTransactionMsg(`${EXPLORER}/${send_hug}`)
-		}
-		else {
+			if (send_hug) {
+				setIsSuccess(true)
+				setIsTxn(false)
+				setTransactionMsg(`${EXPLORER}/${send_hug}`)
+			}
+			else {
+				setIsError(true)
+				setIsTxn(false)
+			}
+		} catch (error) {
 			setIsError(true)
 			setIsTxn(false)
+			setErrorMsg(error.message)
 		}
-	};
 
-	const onDisconnectWallet = async () => {
-		await dappClient().disconnectWallet();
-		setAccount(false);
 	};
 
 	return (
 		<div className={`${styles.container}`}>
 			<Head>
-				<title>$HUX 4 ALL</title>
-				<meta name="description" content="Send a million $HUX to your Tezos friends" />
+				<title>Tezos Virtual Hug</title>
+				<meta name="description" content="Send virtual hugs on the Tezos blockchain" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<main className={`${styles.main} text-black font-mono`}>
 				<h1 className={`${styles.title}`}>
-					$HUX 4 ALL
+					Tezos Virtual Hug
 				</h1>
 
 				<Image className="mb-4 mt-6" src="/hug.jpeg" alt="Hugs" width={250} height={150} />
@@ -69,26 +72,26 @@ export default function Home() {
 					<strong>Tezos Virtual Hug</strong> is a decentralized application that allows you to send virtual hugs on the Tezos blockchain. Just enter the wallet address of someone you want to send a hug to and Send a Hug. The <strong>HUG</strong> will be sent to You and the Tezos address you entered in form of a Non-Fungible Token.
 				</p>
 
-				<h3 className="mb-3">Transfer <span className="font-semibold">1,000,000 $HUX</span> to anyone so both of you get a <span className="font-semibold">$HUX NFT</span></h3>
+				<h3 className="mb-3">Transfer <span className="font-semibold">1,000,000 $HUX</span> to anyone so both of you get a <span className="font-semibold">$HUG NFT</span></h3>
 
 				<input
 					type="text"
 					id="default-input"
-					placeholder="tz..."
+					placeholder="Send a HUG to ..."
 					class="border border-white-300 text-black-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/6 p-2.5 mb-3 text-center placeholder-opacity-50"
 					value={toAddress}
 					onChange={(e) => { setToAddress(e.target.value) }}
 				/>
 				<button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-3/6  justify-center"
 					onClick={async () => { await onSendHugClick() }}><span class="flex justify-center text-center">
-						Send a million $HUX&nbsp;
+						Send a Hug&nbsp;
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
 						</svg>
 					</span></button>
 				{isTxn && <InfoAlert transactionMsg={transactionMsg} />}
 				{isSuccess && <SuccessAlert transactionMsg={transactionMsg} setIsSuccess={setIsSuccess} />}
-				{isError && <ErrorAlert setIsError={setIsError} />}
+				{isError && <ErrorAlert setIsError={setIsError} errorMsg={errorMsg} />}
 			</main>
 			{/* <SuccessToast /> */}
 			{/* <ErrorToast /> */}
@@ -123,7 +126,7 @@ const SuccessAlert = ({ transactionMsg, setIsSuccess }) => {
 					<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
 				</svg>
 				<span class="sr-only">Info</span>
-				<h3 class="text-lg font-medium">Your $HUX were delivered successfully</h3>
+				<h3 class="text-lg font-medium">Your Hug was Delivered Successfully</h3>
 			</div>
 			<div class="mt-2 mb-4 text-sm">
 			</div>
@@ -149,7 +152,7 @@ const SuccessAlert = ({ transactionMsg, setIsSuccess }) => {
 	)
 }
 
-const ErrorAlert = ({ setIsError }) => {
+const ErrorAlert = ({ setIsError, errorMsg }) => {
 	return (
 		<div id="alert-additional-content-2" class="p-4 mb-4 text-red-800 border border-red-300 rounded-lg bg-red-50" role="alert">
 			<div class="flex items-center">
@@ -160,7 +163,7 @@ const ErrorAlert = ({ setIsError }) => {
 				<h3 class="text-lg font-medium">There was an Error in the transaction</h3>
 			</div>
 			<div class="mt-2 mb-4 text-sm">
-				- Check the transaction and Try Again
+				- {errorMsg}
 			</div>
 			<div class="flex">
 				<button
