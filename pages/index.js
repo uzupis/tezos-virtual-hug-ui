@@ -71,14 +71,11 @@ export default function Home() {
 				<p className={`${styles.description} mb-10 text-center justify-center`}>
 					$HUX is a the first currency that creates NFTs when you share it. Send 1 million $HUX to a Tezos friend, and two cute cats will be born and minted to your wallets as a memory. A total of 42 $HUX memories can be created this way.
 						</p>
-					<p>$HUX contract: KT1MT3rZkTE8cN8eGQaNJ2Wg2D2nPPtdxELv</p>
-					<p>Minting contract: KT1Wz92wmPaBmR4eEk9J2iAds2n1NEQTVsFb.</p>
-					<p>A project by Max Haarich / UzupisMUC
-				</p>
+					
 				<input
 					type="text"
 					id="default-input"
-					placeholder="Transfer 1,000,000 $HUX to tz..."
+					placeholder="Who deserves $HUX?"
 					class="border border-white-300 text-black-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/6 p-2.5 mb-3 text-center placeholder-opacity-50"
 					value={toAddress}
 					onChange={(e) => { setToAddress(e.target.value) }}
@@ -90,6 +87,11 @@ export default function Home() {
 							<path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
 						</svg>
 					</span></button>
+					<p>$HUX contract: KT1MT3rZkTE8cN8eGQaNJ2Wg2D2nPPtdxELv</p>
+					<p>Minting contract: KT1Wz92wmPaBmR4eEk9J2iAds2n1NEQTVsFb.</p>
+					<p>A project by Max Haarich / UzupisMUC
+				</p>
+							
 				{isTxn && <InfoAlert transactionMsg={transactionMsg} />}
 				{isSuccess && <SuccessAlert transactionMsg={transactionMsg} setIsSuccess={setIsSuccess} />}
 				{isError && <ErrorAlert setIsError={setIsError} errorMsg={errorMsg} />}
