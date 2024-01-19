@@ -6,16 +6,18 @@
     ],
     "date": "2023-11-05T18:17:49.263070Z",
     "decimals": 0,
-    "description": "This is Non Fungible token representing a virtual hug between A and B",
+    "description": "These two cats were born wen people sent $HUX to each other.",
     "image": "ipfs://QmWKkEXvcMSa2gktVQq7Jsx2NHx1CQdX2mSAEfannd6vWp",
-    "name": "Tezos Virtual Hug",
-    "rights": "No License / All Rights Reserved",
+    "name": "$HUX Memories",
+    "rights": "CC0",
     "symbol": "HUG",
     "tags": [
-        "hug",
-        "pfp",
-        "hux",
-        "community"
+        "HUX",
+        "hugs",
+        "HUX4ALL",
+        "cats",
+        "community",
+        "postphotography",
     ],
     "thumbnailUri": "ipfs://QmWKkEXvcMSa2gktVQq7Jsx2NHx1CQdX2mSAEfannd6vWp"
 }
