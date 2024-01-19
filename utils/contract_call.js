@@ -15,8 +15,8 @@ export const sendHug = async (toAddress) => {
     await dappClient().CheckIfWalletConnected()
     const myAddress = await dappClient().getAccount()
     const tezos = await dappClient().tezos();
-    const nft_description = `This cat is representing a virtual hug between ${myAddress.account.address} and ${toAddress}`
-    const nft_name = `${myAddress.account.address} Hugs ${toAddress}`
+    const nft_description = `These two cats were born when ${myAddress.account.address} sent a million hugs to ${toAddress} . A Project by Max Haarich / UzupisMUC`
+    const nft_name = `$HUX Memory for ${myAddress.account.address} and ${toAddress}`
     const nft_metadata = token_metadata
     let dateobj = new Date().toISOString();
     nft_metadata["date"] = dateobj
