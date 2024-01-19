@@ -69,10 +69,7 @@ export default function Home() {
 				<Image className="mb-4 mt-6" src="/hug.jpeg" alt="Hugs" width={250} height={150} />
 
 				<p className={`${styles.description} mb-10 text-center justify-center`}>
-					$HUX is a the first currency that creates NFTs when you share it. Send 1 million $HUX to a Tezos friend, and two cute cats will be born and minted to your wallets as a memory. A total of 42 $HUX memories can be created this way.
-$HUX contract: KT1MT3rZkTE8cN8eGQaNJ2Wg2D2nPPtdxELv<br>
-Minting Contract: KT1Wz92wmPaBmR4eEk9J2iAds2n1NEQTVsFb
-A project by Max Haarich / UzupisMUC
+					$HUX is a the first currency that creates NFTs when you share it. Send 1 million $HUX to a Tezos friend, and two cute cats will be born and minted to your wallets as a memory. A total of 42 $HUX memories can be created this way. $HUX contract: KT1MT3rZkTE8cN8eGQaNJ2Wg2D2nPPtdxELv, Minting Contract: KT1Wz92wmPaBmR4eEk9J2iAds2n1NEQTVsFb. A project by Max Haarich / UzupisMUC
 				</p>
 
 				<h3 className="mb-3">Transfer <span className="font-semibold">1,000,000 $HUX</span> to anyone so both of you get a <span className="font-semibold">$HUX NFT</span></h3>
