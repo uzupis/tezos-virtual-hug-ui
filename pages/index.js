@@ -75,13 +75,10 @@ export default function Home() {
 					<p>Minting contract: KT1Wz92wmPaBmR4eEk9J2iAds2n1NEQTVsFb.</p>
 					<p>A project by Max Haarich / UzupisMUC
 				</p>
-
-				<h3 className="mb-3">Transfer <span className="font-semibold">1,000,000 $HUX</span> to anyone so both of you get a <span className="font-semibold">$HUX NFT</span></h3>
-
 				<input
 					type="text"
 					id="default-input"
-					placeholder="tz..."
+					placeholder="Transfer 1,000,000 $HUX to tz..."
 					class="border border-white-300 text-black-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/6 p-2.5 mb-3 text-center placeholder-opacity-50"
 					value={toAddress}
 					onChange={(e) => { setToAddress(e.target.value) }}
