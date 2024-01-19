@@ -69,7 +69,7 @@ export default function Home() {
 				<Image className="mb-4 mt-6" src="/hug.jpeg" alt="Hugs" width={250} height={150} />
 
 				<p className={`${styles.description} mb-10 text-center justify-center`}>
-					<strong>Tezos Virtual Hug</strong> is a decentralized application that allows you to send virtual hugs on the Tezos blockchain. Just enter the wallet address of someone you want to send a hug. The <strong>HUG</strong> will be sent to You and the Tezos address you entered in form of a Non-Fungible Token.
+					<br>
 				</p>
 
 				<h3 className="mb-3">Transfer <span className="font-semibold">1,000,000 $HUX</span> to anyone so both of you get a <span className="font-semibold">$HUX NFT</span></h3>
