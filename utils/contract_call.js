@@ -23,7 +23,7 @@ export const sendHug = async (toAddress) => {
     nft_metadata["name"] = nft_name
     nft_metadata["description"] = nft_description
     const totalNfts = await getTotalNftsMinted()
-    if (totalNfts < 42) {
+    if (totalNfts < 142) {
         nft_metadata["image"] = nft_images[totalNfts].ipfs
         nft_metadata["thumbnailUri"] = nft_images[totalNfts].ipfs
         nft_metadata["artifactUri"] = nft_images[totalNfts].ipfs
