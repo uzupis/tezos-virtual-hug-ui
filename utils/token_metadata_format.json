@@ -10,7 +10,13 @@
     "image": "ipfs://QmWKkEXvcMSa2gktVQq7Jsx2NHx1CQdX2mSAEfannd6vWp",
     "name": "$HUX Memories",
     "rights": "CC0",
-    "symbol": "HUG",
+    "royalties": {
+        "decimals": 2,
+        "shares": {
+            "tz1Us5nxpKEEAFC4wprd48T8uv1NKvwDK3S6": 10
+        }
+    },
+    "symbol": "HUX",
     "tags": [
         "HUX",
         "hugs",
